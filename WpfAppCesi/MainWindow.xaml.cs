@@ -2,28 +2,9 @@
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-//TODO : appliquer MVVM
-/*
-    InotifiedPropertyChanged
-
-    CRUD -> viewModel
-
-    ICommand pour envoyer de la view au vm
- */
-
-//TODO : retirer les colonnes inutiles des datagrid
 
 namespace WpfAppCesi
 {
@@ -100,8 +81,7 @@ namespace WpfAppCesi
                         {
                             data.Rows.Add(new object[] { ch.Id, ch.Nom, ch.Climatisation, ch.NbLits, ch.keyHotel });
                         }
-
-                        this.ChambresDataGrid.ItemsSource = (System.Collections.IEnumerable)data;
+                        this.ChambresDataGrid.ItemsSource = SetChambres;
                     }
                 }
             }
